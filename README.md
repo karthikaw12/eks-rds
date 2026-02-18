@@ -1,4 +1,4 @@
-# eks-rds# EKS + RDS Database Architecture (OTP Application)
+# EKS + RDS Database Architecture (OTP Application)
 
 This repository documents the **production-style architecture** used to deploy an OTP application where:
 
@@ -15,6 +15,34 @@ This repository documents the **production-style architecture** used to deploy a
 * **Database**: Amazon RDS (PostgreSQL / MySQL)
 * **Networking**: Single VPC with public & private subnets
 * **Security**: Security Groups, IAM, Kubernetes Secrets / AWS Secrets Manager
+
+---
+
+## 📐 Architecture Diagrams
+
+### Basic Architecture (Current Implementation)
+
+![image4](image4)
+
+*Figure 1: Simple VPC architecture showing EKS cluster connecting to RDS through private networking with Bastion Host for admin access*
+
+### Advanced Multi-VPC Architecture
+
+![image3](image3)
+
+*Figure 2: Enterprise-grade multi-VPC setup with Transit Gateway for complex networking scenarios*
+
+### EKS with Integrated Services
+
+![image2](image2)
+
+*Figure 3: EKS cluster integrated with various AWS services including S3, EFS, and RDS*
+
+### Multi-Account Organization Setup
+
+![image1](image1)
+
+*Figure 4: AWS Organizations setup with Resource Access Manager for cross-account resource sharing*
 
 ---
 
@@ -139,7 +167,7 @@ Used only for debugging, migrations, or admin access.
 
 ---
 
-## 🎯 
+## 🎯 Architecture Summary
 
 > "Frontend and backend run in EKS private subnets, while the database is hosted in Amazon RDS within the same VPC. Backend connects to RDS using private networking secured by security groups, with credentials managed via Kubernetes Secrets or AWS Secrets Manager."
 
