@@ -139,7 +139,7 @@ Used only for debugging, migrations, or admin access.
 
 ---
 
-## 🎯 Interview Explanation (One-liner)
+## 🎯 
 
 > "Frontend and backend run in EKS private subnets, while the database is hosted in Amazon RDS within the same VPC. Backend connects to RDS using private networking secured by security groups, with credentials managed via Kubernetes Secrets or AWS Secrets Manager."
 
